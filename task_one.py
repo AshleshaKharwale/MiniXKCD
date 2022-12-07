@@ -37,7 +37,7 @@ def sample():
     Creating sample function to test merge conflict
     :return:
     """
-    print("Sample to test merge conflict")
+    print("Sample to test merge conflict...")
 
     
 def get_details(num_list):
