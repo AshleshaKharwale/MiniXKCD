@@ -45,8 +45,8 @@ def sample():
     Creating sample function to test merge conflict
     :return: None
     """
-    print("Sample merge conflict")
 
+    print("Sample to test merge conflict...")
 
 def get_details(num_list):
     absolute_url = home_url+relative_url
