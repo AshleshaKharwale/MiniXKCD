@@ -32,14 +32,22 @@ def rand_gen(start: int = 1, stop: int = 87, limit: int = 15) -> List[int]:
     return result
 
 
+def sample2():
+    """
+    Creating sample function to test merge conflict
+    :return: None
+    """
+    print("Sample 2")
+
+
 def sample():
     """
     Creating sample function to test merge conflict
-    :return:
+    :return: None
     """
+
     print("Sample to test merge conflict...")
 
-    
 def get_details(num_list):
     absolute_url = home_url+relative_url
     for num in num_list:
