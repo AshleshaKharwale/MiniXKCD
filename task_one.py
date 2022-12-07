@@ -5,8 +5,14 @@ python task_one.py --max 87  --any 15
 """
 
 import argparse
+import requests
 from random import randrange
 from typing import List
+from pprint import pprint
+
+
+home_url = "https://xkcd.com/"
+relative_url = "{0}/info.0.json"
 
 
 def rand_gen(start: int = 1, stop: int = 87, limit: int = 15) -> List[int]:
@@ -24,6 +30,14 @@ def rand_gen(start: int = 1, stop: int = 87, limit: int = 15) -> List[int]:
 
     result = [randrange(start, stop+1) for i in range(limit)]
     return result
+
+
+def get_details(num_list):
+    absolute_url = home_url+relative_url
+    for num in num_list:
+        response = requests.get(absolute_url.format(num))
+        pprint(response.json())
+        print("-----------"*10)
 
 
 if __name__ == "__main__":
@@ -54,10 +68,9 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    print(args.any)
-    print(args.max)
-    breakpoint()
     comic_number_set = rand_gen(1, args.max, args.any)
-    print(comic_number_set)
-    print(len(comic_number_set))
+    # breakpoint()
+    get_details(comic_number_set)
+
+
 
